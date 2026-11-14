@@ -55,6 +55,7 @@ public class MainActivity extends Activity {
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().setStatusBarColor(BG);
         getWindow().setNavigationBarColor(BG);
+        if (android.os.Build.VERSION.SDK_INT >= 30) getWindow().setDecorFitsSystemWindows(false);
         if (android.os.Build.VERSION.SDK_INT >= 29) {
             getWindow().setNavigationBarContrastEnforced(false);
         }
