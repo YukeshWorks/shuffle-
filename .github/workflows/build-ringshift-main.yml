@@ -46,23 +46,23 @@ jobs:
         run: gradle --no-daemon assembleDebug
 
       - name: Rename APK
-        run: cp ringshift/app/build/outputs/apk/debug/app-debug.apk RingShift-v1.0.0.apk
+        run: cp ringshift/app/build/outputs/apk/debug/app-debug.apk RingShift-v1.1.0.apk
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: RingShift-v1.0.0-APK
-          path: RingShift-v1.0.0.apk
+          name: RingShift-v1.1.0-APK
+          path: RingShift-v1.1.0.apk
           if-no-files-found: error
 
       - name: Publish downloadable release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.0
+          tag_name: v1.1.0
           target_commitish: ringshift
-          name: RingShift v1.0.0
+          name: RingShift v1.1.0
           body: |
             RingShift Android debug APK.
-            Requires Android Notification Policy Access and Alarms & reminders access for scheduled mode switching.
-            Install the APK, open RingShift, grant both accesses, then add daily schedules.
-          files: RingShift-v1.0.0.apk
+            Adds daily From → Until ranges, a return mode, AM/PM time selection, system bar inset handling, a vector launcher icon, and subtle animations.
+            Requires Android Notification Policy Access and Alarms & reminders access.
+          files: RingShift-v1.1.0.apk
